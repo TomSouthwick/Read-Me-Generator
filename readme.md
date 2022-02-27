@@ -1,67 +1,64 @@
-# Readme Generator
+#asdsdfg
 
-> This homework assignment was to create a ReadMe Generator
+---
 
-## Table of Contents
+# Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributing](#contributing)
+5. [Test](#test)
+6. [Github](#github)
+7. [Contact](#contact)
+8. [License](#license)
 
-- [General Info](#general-information)
-- [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Setup](#setup)
-- [Usage](#usage)
-- [Project Status](#project-status)
-- [Room for Improvement](#room-for-improvement)
-- [Bonus Troll Mode Enabled](#Bonus-Troll-Mode-Enabled)
-  ​
+# Description
 
-## General Information
+sdfg
 
-- This project's task was to create a Readme Generator, from which we can dynamically create a unique readme using node
-- The generator does require an install of NPM 'inquirer' package. The Application will be invoked by using the following command: 'node index.js'
--
+---
+# Installation
 
-## Video
+`sdfg`
 
-![Demo of Planner]
+---
+# Usage
 
-## Technologies Used
+sdfg
 
-- npm package - 'inquirer'
-- Copyright notices
-- NodeJS
-  ​
-  ​
+---
+# Contributing
 
-## Features
+sdfg
 
-- After installing the inquirer package - an individual is prompted with readMe guide questions of which they can fill out
-- The copyright functionality is a list that populates a variable of the selected license an individual wishes to use
-- An Individual can overwrite their original readMe by simply running the node command again
-  ​
-  ​
+---
+# Test
 
-## Setup
+sdfg
 
-install npm inquirer
-run your script.js file within Node to begin the prompts
-​
+---
+# Github
 
-## Usage
+github.com/sdfg/sdfg
 
-Complete the following questions to dynamically generate your readMe file.
-​
+---
+# Contact
 
-## Project Status
+mailto:sdfg
 
-_complete_ - Final updates to ReadMe styling and inclusion of the project's ReadMe
-​
-​
+---
+# License
 
-## Room for Improvement
+MIT License
 
-​
-Room for improvement:
+---Copyright 2022 Tom Southwick
 
-- Timing of assignment
-- Testing of the code
-- allowing the ability to space out content within Node
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
+
+

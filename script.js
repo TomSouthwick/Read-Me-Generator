@@ -1,5 +1,6 @@
 var inquirer = require("inquirer");
-const apacheLicense = `Copyright [yyyy] [name of copyright owner]
+const apacheLicense = (year, name) => {
+  return `Copyright ${year} ${name}
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -11,8 +12,14 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.`;
-const mitLicense = `Copyright <yyyy> <COPYRIGHT HOLDER>
+limitations under the License.
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+`;
+};
+
+const mitLicense = (year, name) => {
+  return `Copyright ${year} ${name}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -20,7 +27,11 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
+
+
 `;
+};
 
 inquirer
   .prompt([
@@ -49,10 +60,26 @@ inquirer
         "What testing has been setup in order to best vet the code for bugs?",
     },
     {
+      name: "Github Username",
+      message: "What is your Github username?",
+    },
+    {
+      name: "Github Repository",
+      message: "What is your Github repository name?",
+    },
+    {
+      name: "Contact",
+      message: "What is your email address?",
+    },
+    {
       name: "License",
       type: "list",
       choices: ["MIT License", "Apache 2.0 License"],
       message: "What code is required to run ",
+    },
+    {
+      name: "Name",
+      message: "What is your full name?",
     },
   ])
   .then((answers) => {
@@ -66,7 +93,9 @@ inquirer
 3. [Usage](#usage)
 4. [Contributing](#contributing)
 5. [Test](#test)
-6. [License](#license)
+6. [Github](#github)
+7. [Contact](#contact)
+8. [License](#license)
 
 # Description
 
@@ -90,7 +119,17 @@ ${answers["Contributing"]}
 ---
 # Test
 
-${answers["Test"]}
+${answers["Tests"]}
+
+---
+# Github
+
+github.com/${answers["Github Username"]}/${answers["Github Repository"]}
+
+---
+# Contact
+
+mailto:${answers["Contact"]}
 
 ---
 # License
@@ -100,11 +139,12 @@ ${answers["License"]}
 ---`;
 
     console.log(markdown);
+    const year = new Date().getFullYear();
 
     if (answers["License"] === "MIT License") {
-      markdown += mitLicense;
+      markdown += mitLicense(year, answers["Name"]);
     } else if (answers["License"] === "Apache 2.0 License") {
-      markdown += apacheLicense;
+      markdown += apacheLicense(year, answers["Name"]);
     }
 
     fs = require("fs");
